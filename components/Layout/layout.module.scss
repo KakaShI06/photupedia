@@ -1,0 +1,31 @@
+@import '/styles/_mixins.scss';
+
+.layout{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  &__container{
+    position: sticky;
+    border-bottom: 2px solid white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include desktop {
+      padding-right: 3em;
+    }
+  }
+
+  &__body{
+    flex: 1;
+  }
+}
+
+.desktop{
+  display: flex;
+  height: 100%;
+  gap: 1em;
+  cursor: pointer;
+  font-size: 20px;
+
+}
