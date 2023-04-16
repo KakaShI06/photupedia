@@ -1,5 +1,4 @@
 import classNames from 'classnames'
-import { FunctionTypeNode } from 'typescript'
 import styles from './videotoGif.module.scss'
 
 interface containerProps {

@@ -1,0 +1,14 @@
+@import '../GifMakerContainer/styles.module.scss';
+
+.inputField{
+  padding: 1em 0;
+  display: grid;
+  gap: 1em;
+
+  input, select {
+    padding: 1em;
+    border-radius: 7px;
+    outline: none;
+    border: none;
+  }
+}
