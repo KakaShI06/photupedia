@@ -1,6 +1,7 @@
 import { Roboto } from 'next/font/google'
 import Head from 'next/head'
 import '../styles/_global.scss'
+import Script from 'next/script'
 
 const roboto = Roboto({
   weight: ['100', '300', '400', '500', '700', '900'],
@@ -17,6 +18,7 @@ const App = ({ Component, pageProps }) => {
           content='width=device-width, initial-scale=1.0, maximum-scale=1.0,user-scalable=0'
         />
       </Head>
+      <Script src='/coi-serviceworker.js'></Script>
       <main className={roboto.className}>
         <Component {...pageProps} />
       </main>

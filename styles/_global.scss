@@ -1,3 +1,5 @@
+@import './colors.scss';
+
 *{
   margin: 0;
   padding: 0;
@@ -5,7 +7,7 @@
 }
 
 body {
-  background-color: #0f1717;
+  background-color: $dark-theme-color;
   color: white;
   position: relative;
 }
@@ -22,5 +24,20 @@ body {
 }
 
 .theme-color {
-  color: #0f1717;
+  color: $dark-theme-color;
+}
+
+.page-cover{
+  height: 100vh;
+  width: 100%;
+}
+
+.theme-btn{
+  padding: 1em;
+  color: black;
+  background-color: $dark-theme-primary-color;
+  outline: none;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
 }

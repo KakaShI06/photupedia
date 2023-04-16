@@ -1,11 +1,11 @@
 import Layout from '@/components/Layout'
-import ProductListing from '@/components/ProductListing'
 import { getIsMobile } from '@/helper/utility'
+import IndexPage from '@/page-containers/IndexPage'
 
 const App = ({ isMobile }: { isMobile: boolean }) => {
   return (
     <Layout isMobile={isMobile}>
-      <ProductListing />
+      <IndexPage />
     </Layout>
   )
 }

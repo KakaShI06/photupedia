@@ -12,10 +12,10 @@ interface layoutProps {
 const Layout = ({ children, isMobile }: layoutProps) => {
   return (
     <div className={styles.layout}>
-      <div className={styles.layout__container}>
+      <header className={styles.layout__container}>
         <MainLogo />
         {isMobile ? <MobileLayout /> : <DesktopLayout />}
-      </div>
+      </header>
       <div className={styles.layout__body}>{children}</div>
       <Footer/>
     </div>

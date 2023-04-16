@@ -4,7 +4,7 @@ import { saveAs } from 'file-saver'
 import { GetServerSideProps } from 'next'
 import { getIsMobile } from '@/helper/utility'
 import Layout from '@/components/Layout'
-import VideoToGifContainer from '@/PageContainers/VideoToGif';
+import VideoToGifContainer from '@/page-containers/VideoToGif';
 
 const ffmpeg = createFFmpeg({ log: true })
 
@@ -17,7 +17,7 @@ const VideoToGif = ({ isMobile }: { isMobile: boolean }) => {
   }
 
   useEffect(() => {
-    // init()
+    init()
   }, [])
 
   return (

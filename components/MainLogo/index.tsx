@@ -1,17 +1,7 @@
-import Image from 'next/image'
+import styles from './logo.module.scss'
 
 const MainLogo = () => {
-  return (
-    <div>
-      <Image
-        src='/logo.png'
-        alt='logo'
-        width={160}
-        height={60}
-        priority
-      />
-    </div>
-  )
+  return <h2 className={styles.logo}>PhotoPedia</h2>
 }
 
 export default MainLogo

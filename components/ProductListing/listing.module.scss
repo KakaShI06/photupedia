@@ -1,4 +1,4 @@
-@import '/styles/_mixins.scss';
+@import '/styles/mixins';
 
 .listing {
   width: 100%;
@@ -6,6 +6,10 @@
 
   &__container {
     margin: 0 auto;
+
+    a{
+      text-decoration: none;
+    }
 
     @include desktop {
       padding-top: 4em;
