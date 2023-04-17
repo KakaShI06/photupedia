@@ -4,8 +4,9 @@ import cx from 'classnames'
 interface ButtonProps {
   isLoading: Boolean
   children: any
-  disabled: any,
-  type: any,
+  disabled?: any,
+  type?: any,
+  onClick?: any 
 }
 
 const Loader = () => {
@@ -20,9 +21,9 @@ const Loader = () => {
   )
 }
 
-const Button = ({ isLoading, children, disabled, type }: ButtonProps) => {
+const Button = ({ isLoading, children, disabled, type = 'button', onClick }: ButtonProps) => {
   return (
-    <button className={cx('theme-btn', styles.btn)} disabled={disabled} type={type}>
+    <button onClick={onClick} className={cx('theme-btn', styles.btn)} disabled={disabled} type={type}>
       {isLoading ? <Loader /> : <>{children}</>}
     </button>
   )

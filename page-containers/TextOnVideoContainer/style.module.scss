@@ -12,3 +12,16 @@
     border: none;
   }
 }
+
+.resutWrapper{
+  padding-bottom: 2em;
+}
+
+.resultImageWrapper{
+  text-align: center;
+
+  img{
+    width: 90%;
+    aspect-ratio: 9/12;
+  }
+}

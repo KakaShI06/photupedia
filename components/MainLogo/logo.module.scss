@@ -1,6 +1,12 @@
 @import '/styles/colors.scss';
+@import '/styles/mixins';
 
-.logo{
-  padding: 1em;
+.logo {
+  padding: 10px;
+
+  @include desktop {
+    padding: 1em;
+  }
+
   color: $dark-theme-primary-color;
 }

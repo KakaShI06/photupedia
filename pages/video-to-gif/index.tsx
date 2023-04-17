@@ -1,32 +1,26 @@
-import { useEffect, useState } from 'react'
-import { createFFmpeg, fetchFile } from '@ffmpeg/ffmpeg'
-import { saveAs } from 'file-saver'
-import { GetServerSideProps } from 'next'
 import { getIsMobile } from '@/helper/utility'
 import Layout from '@/components/Layout'
-import VideoToGifContainer from '@/page-containers/VideoToGif';
+import VideoToGifContainer from '@/page-containers/VideoToGif'
 
-const ffmpeg = createFFmpeg({ log: true })
+interface pageProps {
+  isMobile: boolean
+  title: string
+  subHeading: string
+  description: string
+}
 
-const VideoToGif = ({ isMobile }: { isMobile: boolean }) => {
-  const [video, setVideo] = useState('')
-  const [name, setName] = useState('')
-
-  const init = async () => {
-    await ffmpeg.load()
-  }
-
-  useEffect(() => {
-    init()
-  }, [])
-
+const VideoToGif = ({
+  isMobile,
+  title,
+  description,
+  subHeading,
+}: pageProps) => {
   return (
     <Layout isMobile={isMobile}>
-      <VideoToGifContainer 
-        name={name}
-        video={video}
-        setName={setName}
-        setVideo={setVideo}
+      <VideoToGifContainer
+        title={title}
+        description={description}
+        subHeading={subHeading}
       />
     </Layout>
   )
@@ -34,10 +28,17 @@ const VideoToGif = ({ isMobile }: { isMobile: boolean }) => {
 
 export async function getServerSideProps(context: any) {
   const isMobile = getIsMobile(context.req.headers['user-agent'])
+  const title = 'Gif Maker'
+  const subHeading = 'Convert Videos To Gifs In Seconds'
+  const description =
+    'Turn your favorite videos into shareable gifs with PhotoPedia. Our easy-to-use app lets you quickly convert videos to gifs without any hassle. Choose your favorite clip, select the start and end points, and let PhotoPedia do the rest. Share your newly created gifs with your friends and family on social media or messaging apps. With PhotoPedia, the possibilities are endless.'
 
   return {
     props: {
       isMobile,
+      subHeading,
+      title,
+      description,
     },
   }
 }
